@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: GenBuilder
+    description: A code generation tool for building applications quickly and efficiently.
