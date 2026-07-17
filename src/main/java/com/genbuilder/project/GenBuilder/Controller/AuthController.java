@@ -7,7 +7,9 @@ import com.genbuilder.project.GenBuilder.dto.auth.LoginRequest;
 import com.genbuilder.project.GenBuilder.dto.auth.ProfileResponse;
 import com.genbuilder.project.GenBuilder.dto.auth.SignupRequest;
 import com.genbuilder.project.GenBuilder.dto.auth.UserProfileResponse;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,10 +21,11 @@ import java.util.Optional;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/auth")
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class AuthController {
 
-    private AuthService authService;
-    private UserService userService;
+    AuthService authService;
+    UserService userService;
 
     @PostMapping("/signup")
     public ResponseEntity<AuthService> signup(SignupRequest request){
